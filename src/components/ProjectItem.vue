@@ -1,0 +1,62 @@
+<template>
+  <li class="project-item-container">
+    <img
+      class="project-item-image"
+      :src="projectDetails.imageURL"
+      :alt="'project-item' + projectDetails.projectId"
+    />
+    <div class="project-item-details-container">
+      <h1 class="project-item-title">{{ projectDetails.title }}</h1>
+      <p class="project-item-description">{{ projectDetails.description }}</p>
+    </div>
+  </li>
+</template>
+
+<script>
+export default {
+  name: "ProjectItem",
+  props: {
+    projectDetails: Object,
+  },
+};
+</script>
+
+<style scoped>
+.project-item-container {
+  width: 339px;
+  background: #ffffff;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.project-item-image {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.project-item-details-container {
+  padding: 32px 24px 32px 24px;
+}
+
+.project-item-title {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #183b56;
+  margin: 0;
+}
+
+.project-item-description {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 32px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #7b8794;
+}
+</style>
